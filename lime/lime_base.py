@@ -138,7 +138,7 @@ class LimeBase(object):
                                                num_features,
                                                feature_selection)
 
-        easy_model = linear_model.Ridge(alpha=1, fit_intercept=True)
+        easy_model = linear_model.Lasso(alpha=1, fit_intercept=True)
         easy_model.fit(neighborhood_data[:, used_features],
                        labels_column, sample_weight=weights)
         if self.verbose:
